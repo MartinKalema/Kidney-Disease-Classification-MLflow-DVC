@@ -1,7 +1,7 @@
 import os
 from box.exceptions import BoxValueError
 import yaml
-from src.kidneyDiseaseClassifier import logger
+from kidneyDiseaseClassifier import logger
 import json
 import joblib
 from ensure import ensure_annotations   
@@ -31,3 +31,18 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
             return ConfigBox(content)
     except BoxValueError:
         raise ValueError("yaml file is empty")
+    except Exception as e:
+        raise e
+    
+@ensure_annotations
+def create_directories(path_to_directories: list, verbose=True):
+    """create list of directories
+
+    Args: 
+        path_to_directories (list): list of directory paths
+        ignore_log (bool, optional): ignore if multiple dirs is to be created 
+    """
+    for path in path_to_directories:
+        os.makedirs(path, exist_ok=True)
+        if verbose:
+            logger.info(f"Created directory at: {path}")
