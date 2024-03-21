@@ -5,7 +5,7 @@ import logging
 logging_str = "[%(asctime)s: %(levelname)s: %(module)s: %(message)s]"
 
 log_dir = "logs" # Directory where the logs are stored
-log_file_path = os.path.join(log_dir, "running_logs.log") # Path to log file
+log_file_path = os.path.join(log_dir, "logs.log") # Path to log file
 os.makedirs(log_dir, exist_ok=True)
 
 logging.basicConfig(
