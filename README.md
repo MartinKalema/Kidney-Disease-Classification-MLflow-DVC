@@ -13,3 +13,26 @@ Tasks
 - Prediction pipeline and user app creation
 - Docker
 - Final CI/CD Deployment on AWS
+
+## How to install
+Clone the repository
+```bash
+git clone https://github.com/MartinKalema/Kidney-Disease-Classification-MLflow-DVC.git
+```
+Create a conda environment after opening the repository and activate it
+```bash
+conda create -n kidney python=3.8 -y
+```
+```bash
+conda activate kidney
+```
+
+Install the requirements
+```bash
+pip install -r requirements.txt
+```
+
+
+
+
+
