@@ -1,7 +1,7 @@
 import os
 from box.exceptions import BoxValueError
 import yaml
-from kidneyDiseaseClassifier import logger
+from src import kidneyDiseaseClassifier
 import json
 import joblib
 from ensure import ensure_annotations   
@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 import base64
 
+logger = kidneyDiseaseClassifier.logger
 
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
