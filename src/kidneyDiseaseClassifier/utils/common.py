@@ -164,3 +164,15 @@ def decodeImage(imageString,  fileName):
     with open(fileName, "wb") as f:
         f.write(imageData)
         f.close()
+
+def encodeImageIntoBase64(imagePath):
+    """Encode an image file into base64 format.
+
+    Args:
+        imagePath (str): Path to the image file.
+
+    Returns:
+        bytes: Base64-encoded image data.
+    """
+    with open(imagePath, "rb") as f:
+        return base64.b64encode(f.read())
