@@ -4,7 +4,7 @@ import yaml
 from src import kidneyDiseaseClassifier
 import json
 import joblib
-from ensure import ensure_annotations   
+from ensure import ensure_annotations # catch type annotation errors
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
@@ -76,3 +76,16 @@ def load_json(path: Path) -> ConfigBox:
 
     logger.info(f"Json file loaded successfully from: {path}")
     return ConfigBox(content)
+
+@ensure_annotations
+def save_bin(data: Any, path: Path):
+    """Save binary
+
+    Args:
+        data (Any): data to be saved as binary
+        path (Path): path where the binary file will be saved.
+    """
+    joblib.dump(value=data, filename=path)
+    logger.info(f"Binary file saved at: {path}")
+
+
