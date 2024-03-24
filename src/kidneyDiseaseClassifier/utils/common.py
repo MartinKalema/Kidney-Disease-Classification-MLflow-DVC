@@ -90,29 +90,58 @@ def save_bin(data: Any, path: Path):
 
 @ensure_annotations
 def load_bin(path: Path) -> Any:
-    """load binary file
+    """Load a binary file.
 
-    Args: 
-        path (Path): path to binary file
-    
+    This function loads a binary file located at the specified path using the joblib library.
+
+    Args:
+        path (Path): The path to the binary file to be loaded.
+
     Returns:
-        Any: object stored in file
-    """
+        Any: The object stored in the binary file.
 
-    data = joblib.load(path)
-    logger.info(f"Binary file loaded from: {path}")
-    return data
+    Raises:
+        FileNotFoundError: If the specified file does not exist.
+        ValueError: If the file cannot be deserialized.
+    """
+    
+    if not path.exists():
+        raise FileNotFoundError(f"File not found at: {path}")
+
+    try:
+        data = joblib.load(path)
+        logger.info(f"Binary file loaded from: {path}")
+        return data
+    except Exception as e:
+        raise ValueError(f"Error loading data from {path}: {e}")
 
 
 @ensure_annotations
 def get_size(path: Path) -> str:
-    """get size in KB
+    """Get the size of a file in kilobytes.
 
-    Args;
-        path (Path): path of file whose size is required.
-    returns:
-        str: size in KB
+    Args:
+        path (Path): The path to the file whose size is required.
+
+    Returns:
+        str: A string representing the size of the file in kilobytes, rounded to the nearest whole number.
     """
     size_in_kb = round(os.path.getsize(path)/1024)
     return f"~{size_in_kb} KB"
 
+
+def decodeImage(imageString,  fileName):
+    """
+    Decode a base64-encoded image string and save it to a file.
+
+    Parameters:
+        imageString (str): A base64-encoded image string.
+        fileName (str): The name of the file to save the decoded image to.
+
+    Returns:
+        None
+    """
+    imageData = base64.b64decode(imageString)
+    with open(fileName, "wb") as f:
+        f.write(imageData)
+        f.close()
