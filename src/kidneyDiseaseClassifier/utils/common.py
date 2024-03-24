@@ -102,3 +102,17 @@ def load_bin(path: Path) -> Any:
     data = joblib.load(path)
     logger.info(f"Binary file loaded from: {path}")
     return data
+
+
+@ensure_annotations
+def get_size(path: Path) -> str:
+    """get size in KB
+
+    Args;
+        path (Path): path of file whose size is required.
+    returns:
+        str: size in KB
+    """
+    size_in_kb = round(os.path.getsize(path)/1024)
+    return f"~{size_in_kb} KB"
+
