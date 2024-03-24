@@ -14,16 +14,17 @@ logger = kidneyDiseaseClassifier.logger
 
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
-    """reads yaml file and returns
+    """Reads a YAML file and returns its contents wrapped in a ConfigBox.
 
-    Args: 
-        path_to_yaml (str): path like input
+    Args:
+        path_to_yaml (Path): The path to the YAML file.
 
-    Raises: 
-        ValueError: if yaml file is empty
-        e: empty file
+    Raises:
+        ValueError: If the YAML file is empty.
+        Exception: Any other unexpected error that occurs during file reading.
+
     Returns:
-        ConfigBox: ConfigBox type
+        ConfigBox: A ConfigBox containing the contents of the YAML file.
     """
     try:
         with open(path_to_yaml) as yaml_file:
@@ -37,11 +38,11 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
     
 @ensure_annotations
 def create_directories(path_to_directories: list, verbose=True):
-    """create list of directories
+    """Create directories specified in the list.
 
-    Args: 
-        path_to_directories (list): list of directory paths
-        ignore_log (bool, optional): ignore if multiple dirs is to be created 
+    Args:
+        path_to_directories (list): A list of directory paths to be created.
+        verbose (bool, optional): If True, log messages will be displayed for each directory creation. Defaults to True.
     """
     for path in path_to_directories:
         os.makedirs(path, exist_ok=True)
@@ -50,31 +51,49 @@ def create_directories(path_to_directories: list, verbose=True):
 
 @ensure_annotations
 def save_json(path: Path, data: dict):
-    """Save json data
+    """Save JSON data to a file.
 
     Args:
-        path (Path): path to json file
-        data (dict): Data to be saved to json file
-    """
-    with open(path, "w") as f:
-        json.dump(data, f, indent=4)
+        path (Path): The path to the JSON file.
+        data (dict): The data to be saved to the JSON file.
 
+    Raises:
+        IOError: If an error occurs while writing to the file.
+    """
+    try:
+        with open(path, 'w') as json_file:
+            json.dump(data, json_file)
+    except IOError as e:
+        raise IOError(f"An error occurred while writing to the file: {e}")
+    
     logger.info(f"Json file saved at: {path}")
 
 @ensure_annotations
 def load_json(path: Path) -> ConfigBox:
-    """load json file data
+    """Load JSON file data and return as a ConfigBox.
 
     Args:
-        path (Path): path to json file
+        path (Path): The path to the JSON file.
+
     Returns:
-        ConfigBox: Data as class attributes instead of dict
+        ConfigBox: Data loaded from the JSON file as class attributes.
+
+    Raises:
+        FileNotFoundError: If the specified file does not exist.
+        json.JSONDecodeError: If the JSON file is invalid.
     """
+    try:
+        with open(path, 'r') as f:
+            content = json.load(f)
+    except FileNotFoundError as e:
+        logger.error(f"File not found at: {path}")
+        raise e
+    except json.JSONDecodeError as e:
+        logger.error(f"Error decoding JSON file at: {path}. Reason: {e}")
+        raise e
 
-    with open(path) as f:
-        content = json.load(f)
+    logger.info(f"JSON file loaded successfully from: {path}")
 
-    logger.info(f"Json file loaded successfully from: {path}")
     return ConfigBox(content)
 
 @ensure_annotations
