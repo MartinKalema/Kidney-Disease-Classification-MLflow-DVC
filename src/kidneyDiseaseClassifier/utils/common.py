@@ -4,13 +4,14 @@ import yaml
 from src import kidneyDiseaseClassifier
 import json
 import joblib
-from ensure import ensure_annotations 
+from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
 import base64
 
 logger = kidneyDiseaseClassifier.logger
+
 
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
@@ -35,7 +36,8 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
         raise ValueError("yaml file is empty")
     except Exception as e:
         raise e
-    
+
+
 @ensure_annotations
 def create_directories(path_to_directories: list, verbose=True):
     """Create directories specified in the list.
@@ -48,6 +50,7 @@ def create_directories(path_to_directories: list, verbose=True):
         os.makedirs(path, exist_ok=True)
         if verbose:
             logger.info(f"Created directory at: {path}")
+
 
 @ensure_annotations
 def save_json(path: Path, data: dict):
@@ -65,8 +68,9 @@ def save_json(path: Path, data: dict):
             json.dump(data, json_file)
     except IOError as e:
         raise IOError(f"An error occurred while writing to the file: {e}")
-    
+
     logger.info(f"Json file saved at: {path}")
+
 
 @ensure_annotations
 def load_json(path: Path) -> ConfigBox:
@@ -96,6 +100,7 @@ def load_json(path: Path) -> ConfigBox:
 
     return ConfigBox(content)
 
+
 @ensure_annotations
 def save_bin(data: Any, path: Path):
     """Save file as binary
@@ -106,6 +111,7 @@ def save_bin(data: Any, path: Path):
     """
     joblib.dump(value=data, filename=path)
     logger.info(f"Binary file saved at: {path}")
+
 
 @ensure_annotations
 def load_bin(path: Path) -> Any:
@@ -123,7 +129,7 @@ def load_bin(path: Path) -> Any:
         FileNotFoundError: If the specified file does not exist.
         ValueError: If the file cannot be deserialized.
     """
-    
+
     if not path.exists():
         raise FileNotFoundError(f"File not found at: {path}")
 
@@ -145,11 +151,11 @@ def get_size(path: Path) -> str:
     Returns:
         str: A string representing the size of the file in kilobytes, rounded to the nearest whole number.
     """
-    size_in_kb = round(os.path.getsize(path)/1024)
+    size_in_kb = round(os.path.getsize(path) / 1024)
     return f"~{size_in_kb} KB"
 
 
-def decodeImage(imageString,  fileName):
+def decodeImage(imageString, fileName):
     """
     Decode a base64-encoded image string and save it to a file.
 
@@ -164,6 +170,7 @@ def decodeImage(imageString,  fileName):
     with open(fileName, "wb") as f:
         f.write(imageData)
         f.close()
+
 
 def encodeImageIntoBase64(imagePath):
     """Encode an image file into base64 format.

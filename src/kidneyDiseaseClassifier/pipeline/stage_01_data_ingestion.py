@@ -4,6 +4,7 @@ from kidneyDiseaseClassifier import logger
 
 STAGE_NAME = "Data Ingestion Stage"
 
+
 class DataIngestionTrainingPipeline:
     def __init__(self):
         pass
@@ -21,7 +22,8 @@ if __name__ == '__main__':
         logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
         obj = DataIngestionTrainingPipeline()
         obj.main()
-        logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<<\n\nx========================x")
+        logger.info(
+            f">>>>>> {STAGE_NAME} completed <<<<<<<\n\nx========================x")
     except Exception as e:
         logger.exception(e)
         raise e

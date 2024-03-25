@@ -16,4 +16,10 @@ scipy
 Flask
 Flask-Cors
 gdown
+flake8
+autopep8
+expecttest
+hypothesis
+pytest
+mypy
 -e .
