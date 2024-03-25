@@ -1,5 +1,2 @@
-from src import kidneyDiseaseClassifier
-
-logger = kidneyDiseaseClassifier.logger
-
+from src.kidneyDiseaseClassifier import logger
 
