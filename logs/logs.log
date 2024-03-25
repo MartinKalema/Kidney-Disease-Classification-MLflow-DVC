@@ -17,3 +17,8 @@
 [2024-03-25 16:07:46,339: INFO: main: >>>>>> Data Ingestion Stage completed <<<<<<<
 
 x========================x]
+[2024-03-25 23:09:55,362: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-03-25 23:09:55,369: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-25 23:09:55,375: INFO: common: Created directory at: artifacts]
+[2024-03-25 23:09:55,382: INFO: common: Created directory at: artifacts/prepare_base_model]
+[2024-03-25 23:10:33,704: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
