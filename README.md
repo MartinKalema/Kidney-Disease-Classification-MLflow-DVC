@@ -14,6 +14,18 @@ Tasks
 - Docker
 - Final CI/CD Deployment on AWS
 
+## Workflows
+- Update config.yaml
+- Update secrets.yaml [Optional]
+- Update params.yaml
+- Update the entity
+- Update the configuration manager in src config
+- Update the components
+- Update the pipeline
+- Update the main.py
+- Upddate the dvc.yaml
+- Update app.py
+
 ## How to install
 Clone the repository
 ```bash
