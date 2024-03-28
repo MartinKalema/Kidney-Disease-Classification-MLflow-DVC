@@ -1,4 +1,5 @@
 ## End-to-End-Kidney-Disease-Classification-Using-MLflow-DVC
+
 MLflow for experiment tracking and DVC for ML Pipeline tracking.
 
 Tasks
@@ -56,29 +57,33 @@ pip install -r requirements.txt
 This Project is connected to Dagshub so all my experiments are sent to dagshub and can be viewed on dagshub itself or on the mlflow platform integrated there.
 
 ## View experiments locally.
+
 Do not set the tracking uri using,
+
 ```python
 mlflow.set_tracking_uri()
 ```
+
 All experiments will be stored inside an auto generated folder called **mlruns**. Use the command below to view them in the mlflow web interface
+
 ```
 mlflow ui
 ```
 
-
 ## For remote views & collaboration.
+
 Connect your github account to DagsHub @ https://dagshub.com
 
-Before running an experiment add the mlflow uri configs as shown below.
+Whenever you close your editor and open it again, the mlflow uri configs are erased and you must run the commands below in your bash terminal again, otherwise the experiments will be saved on your local machine in a folder called **mlruns**
+
 ```
 export MLFLOW_TRACKING_URI=https://dagshub.com/kalema3502/Kidney-Disease-Classification-MLflow-DVC.mlflow
 ```
+
 ```
 export MLFLOW_TRACKING_USERNAME=kalema3502
 ```
+
 ```
-export MLFLOW_TRACKING_PASSWORD=fb3845efcc3b2e46a4157b1d2c977a21e02dd16e 
+export MLFLOW_TRACKING_PASSWORD=fb3845efcc3b2e46a4157b1d2c977a21e02dd16e
 ```
-
-
-
