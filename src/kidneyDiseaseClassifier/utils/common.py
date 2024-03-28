@@ -1,7 +1,7 @@
 import os
 from box.exceptions import BoxValueError
 import yaml
-from src import kidneyDiseaseClassifier
+from kidneyDiseaseClassifier import logger
 import json
 import joblib
 from ensure import ensure_annotations
@@ -9,8 +9,6 @@ from box import ConfigBox
 from pathlib import Path
 from typing import Any
 import base64
-
-logger = kidneyDiseaseClassifier.logger
 
 
 @ensure_annotations

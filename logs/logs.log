@@ -159,3 +159,108 @@ x========================x]
 [2024-03-28 21:05:41,568: INFO: builder_impl: Assets written to: /tmp/tmpkc6cs54g/model/data/model/assets]
 [2024-03-28 21:05:49,035: INFO: main: >>>>>> Model Evaluation completed <<<<<<<
  **********************************]
+[2024-03-28 21:17:53,550: INFO: main: *********************************
+]
+[2024-03-28 21:17:53,551: INFO: main: >>>>>> Data Ingestion Stage started <<<<<<]
+[2024-03-28 21:17:53,558: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-03-28 21:17:53,561: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-28 21:17:53,561: INFO: common: Created directory at: artifacts]
+[2024-03-28 21:17:53,562: INFO: common: Created directory at: artifacts/data_ingestion]
+[2024-03-28 21:17:53,562: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-03-28 21:18:40,556: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-03-28 21:18:41,078: INFO: data_ingestion: Extracted zip file into: artifacts/data_ingestion]
+[2024-03-28 21:18:41,079: INFO: main: >>>>>> Data Ingestion Stage completed <<<<<<<
+**********************************]
+[2024-03-28 21:18:41,079: INFO: main: *********************************
+]
+[2024-03-28 21:18:41,079: INFO: main: >>>>>> Prepare Base Model Stage started <<<<<<]
+[2024-03-28 21:18:41,081: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-03-28 21:18:41,083: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-28 21:18:41,083: INFO: common: Created directory at: artifacts]
+[2024-03-28 21:18:41,083: INFO: common: Created directory at: artifacts/prepare_base_model]
+[2024-03-28 21:18:41,649: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-03-28 21:18:41,968: INFO: main: >>>>>> Prepare Base Model Stage completed <<<<<<<
+ **********************************]
+[2024-03-28 21:18:41,968: INFO: main: *********************************
+]
+[2024-03-28 21:18:41,968: INFO: main: >>>>>> Training started <<<<<<]
+[2024-03-28 21:18:41,970: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-03-28 21:18:41,972: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-28 21:18:41,972: INFO: common: Created directory at: artifacts]
+[2024-03-28 21:18:41,972: INFO: common: Created directory at: artifacts/training]
+[2024-03-28 21:22:50,803: INFO: main: >>>>>> Training completed <<<<<<<
+ **********************************]
+[2024-03-28 21:22:50,805: INFO: main: *********************************
+]
+[2024-03-28 21:22:50,805: INFO: main: >>>>>> Model Evaluation started <<<<<<]
+[2024-03-28 21:22:50,807: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-03-28 21:22:50,809: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-28 21:22:50,809: INFO: common: Created directory at: artifacts]
+[2024-03-28 21:23:30,976: INFO: common: Json file saved at: scores.json]
+[2024-03-28 21:24:05,651: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2024-03-28 21:24:06,306: INFO: builder_impl: Assets written to: /tmp/tmpkd34hq4m/model/data/model/assets]
+[2024-03-28 21:26:45,812: INFO: main: >>>>>> Model Evaluation completed <<<<<<<
+ **********************************]
+[2024-03-28 23:07:40,861: INFO: stage_01_data_ingestion: >>>>>> Data Ingestion Stage started <<<<<<]
+[2024-03-28 23:07:40,864: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-03-28 23:07:40,866: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-28 23:07:40,867: INFO: common: Created directory at: artifacts]
+[2024-03-28 23:07:40,867: INFO: common: Created directory at: artifacts/data_ingestion]
+[2024-03-28 23:07:40,868: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-03-28 23:08:06,768: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-03-28 23:08:07,327: INFO: data_ingestion: Extracted zip file into: artifacts/data_ingestion]
+[2024-03-28 23:08:07,327: INFO: stage_01_data_ingestion: >>>>>> Data Ingestion Stage completed <<<<<<<
+
+x========================x]
+[2024-03-28 23:08:13,468: INFO: stage_02_prepare_base_model: *********************************
+]
+[2024-03-28 23:08:13,468: INFO: stage_02_prepare_base_model: >>>>>> Prepare Base Model started <<<<<<]
+[2024-03-28 23:08:13,471: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-03-28 23:08:13,473: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-28 23:08:13,473: INFO: common: Created directory at: artifacts]
+[2024-03-28 23:08:13,473: INFO: common: Created directory at: artifacts/prepare_base_model]
+[2024-03-28 23:08:14,186: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-03-28 23:08:14,523: INFO: stage_02_prepare_base_model: >>>>>> Prepare Base Model completed <<<<<<<
+ **********************************]
+[2024-03-28 23:08:18,948: INFO: stage_03_model_training: *********************************
+]
+[2024-03-28 23:08:18,948: INFO: stage_03_model_training: >>>>>> Training started <<<<<<]
+[2024-03-28 23:08:18,950: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-03-28 23:08:18,952: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-28 23:08:18,953: INFO: common: Created directory at: artifacts]
+[2024-03-28 23:08:18,953: INFO: common: Created directory at: artifacts/training]
+[2024-03-28 23:12:44,653: INFO: stage_03_model_training: >>>>>> Training completed <<<<<<<
+ **********************************]
+[2024-03-28 23:12:50,521: INFO: stage_04_model_evaluation: *********************************
+]
+[2024-03-28 23:12:50,521: INFO: stage_04_model_evaluation: >>>>>> Model Evaluation started <<<<<<]
+[2024-03-28 23:12:50,526: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-03-28 23:12:50,536: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-28 23:12:50,537: INFO: common: Created directory at: artifacts]
+[2024-03-28 23:13:30,407: INFO: common: Json file saved at: scores.json]
+[2024-03-28 23:13:32,668: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2024-03-28 23:13:33,502: INFO: builder_impl: Assets written to: /tmp/tmpq_wp1uxb/model/data/model/assets]
+[2024-03-28 23:13:39,820: INFO: stage_04_model_evaluation: >>>>>> Model Evaluation completed <<<<<<<
+ **********************************]
+[2024-03-28 23:33:49,734: INFO: stage_04_model_evaluation: *********************************
+]
+[2024-03-28 23:33:49,734: INFO: stage_04_model_evaluation: >>>>>> Model Evaluation started <<<<<<]
+[2024-03-28 23:33:49,737: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-03-28 23:33:49,739: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-28 23:33:49,739: INFO: common: Created directory at: artifacts]
+[2024-03-28 23:34:31,121: INFO: common: Json file saved at: scores.json]
+[2024-03-28 23:34:33,358: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2024-03-28 23:34:34,178: INFO: builder_impl: Assets written to: /tmp/tmpzsy_0gdg/model/data/model/assets]
+[2024-03-28 23:34:40,557: INFO: stage_04_model_evaluation: >>>>>> Model Evaluation completed <<<<<<<
+ **********************************]
+[2024-03-28 23:36:29,136: INFO: stage_04_model_evaluation: *********************************
+]
+[2024-03-28 23:36:29,137: INFO: stage_04_model_evaluation: >>>>>> Model Evaluation started <<<<<<]
+[2024-03-28 23:36:29,139: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-03-28 23:36:29,144: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-28 23:36:29,145: INFO: common: Created directory at: artifacts]
+[2024-03-28 23:37:09,379: INFO: common: Json file saved at: scores.json]
+[2024-03-28 23:37:13,701: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2024-03-28 23:37:14,404: INFO: builder_impl: Assets written to: /tmp/tmputz7rtbz/model/data/model/assets]
+[2024-03-28 23:38:42,160: INFO: stage_04_model_evaluation: >>>>>> Model Evaluation completed <<<<<<<
+ **********************************]
