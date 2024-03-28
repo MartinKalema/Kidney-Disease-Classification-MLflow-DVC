@@ -67,7 +67,7 @@ mlflow ui
 
 
 ## For remote views & collaboration.
-Connect your github account to [DagsHub]("https://dagshub.com") 
+Connect your github account to DagsHub @ https://dagshub.com
 
 Before running an experiment add the mlflow uri configs as shown below.
 ```
