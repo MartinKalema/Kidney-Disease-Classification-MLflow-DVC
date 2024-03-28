@@ -22,4 +22,6 @@ expecttest
 hypothesis
 pytest
 mypy
+mlflow==2.5.0
+dagshub
 -e .
