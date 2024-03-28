@@ -99,3 +99,9 @@ Add the project pipelines to the dvc.yaml file, then run the command below.
 ```
 dvc repro
 ```
+
+To the pipeline structure, use the command below
+
+```
+dvc dag
+```
