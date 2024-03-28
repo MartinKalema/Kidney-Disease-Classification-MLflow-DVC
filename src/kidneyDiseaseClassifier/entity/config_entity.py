@@ -40,3 +40,29 @@ class PrepareBaseModelConfig:
     params_include_top: bool
     params_weights: str
     params_classes: int
+
+
+
+@dataclass(frozen=True)
+class TrainingConfig:
+    """
+    Configuration class for training the model.
+
+    Attributes:
+        root_dir (Path): The root directory where training-related data will be stored or processed.
+        trained_model_path (Path): The filepath where the trained model will be saved.
+        updated_base_model_path (Path): The filepath of the updated base model (if applicable).
+        training_data (Path): The directory or filepath where training data is located.
+        params_epochs (int): The number of epochs for training.
+        params_batch_size (int): The batch size for training.
+        params_is_augmentation (bool): Whether data augmentation is applied during training.
+        params_image_size (list): The dimensions of input images for training.
+    """
+    root_dir: Path
+    trained_model_path: Path
+    updated_base_model_path: Path
+    training_data: Path
+    params_epochs: int
+    params_batch_size: int
+    params_is_augmentation: bool
+    params_image_size: list
