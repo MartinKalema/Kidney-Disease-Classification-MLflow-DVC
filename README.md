@@ -87,3 +87,15 @@ export MLFLOW_TRACKING_USERNAME=kalema3502
 ```
 export MLFLOW_TRACKING_PASSWORD=fb3845efcc3b2e46a4157b1d2c977a21e02dd16e
 ```
+
+## DVC setup
+
+```
+dvc init
+```
+
+Add the project pipelines to the dvc.yaml file, then run the command below.
+
+```
+dvc repro
+```
