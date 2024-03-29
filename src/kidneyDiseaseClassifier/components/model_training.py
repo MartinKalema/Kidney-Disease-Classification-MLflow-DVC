@@ -122,3 +122,9 @@ class Training:
             path=self.config.trained_model_path,
             model=self.model
         )
+
+        # Save the trained model to model folder in the root
+        self.save_model(
+            path=Path("model/model.h5"),
+            model=self.model
+        )
