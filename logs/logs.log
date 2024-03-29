@@ -264,3 +264,23 @@ x========================x]
 [2024-03-28 23:37:14,404: INFO: builder_impl: Assets written to: /tmp/tmputz7rtbz/model/data/model/assets]
 [2024-03-28 23:38:42,160: INFO: stage_04_model_evaluation: >>>>>> Model Evaluation completed <<<<<<<
  **********************************]
+[2024-03-29 13:42:16,781: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8082
+ * Running on http://192.168.111.111:8082]
+[2024-03-29 13:42:16,781: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-03-29 13:42:16,783: INFO: _internal:  * Restarting with stat]
+[2024-03-29 13:42:20,358: WARNING: _internal:  * Debugger is active!]
+[2024-03-29 13:42:20,511: INFO: _internal:  * Debugger PIN: 104-637-584]
+[2024-03-29 13:43:03,824: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:6000
+ * Running on http://192.168.111.111:6000]
+[2024-03-29 13:43:03,825: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-03-29 13:43:46,672: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.111.111:5000]
+[2024-03-29 13:43:46,672: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-03-29 13:43:52,868: INFO: _internal: 127.0.0.1 - - [29/Mar/2024 13:43:52] "GET / HTTP/1.1" 200 -]
+[2024-03-29 13:43:53,098: INFO: _internal: 127.0.0.1 - - [29/Mar/2024 13:43:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
