@@ -54,7 +54,7 @@ Install the requirements
 pip install -r requirements.txt
 ```
 
-This Project is connected to Dagshub so all my experiments are sent to dagshub and can be viewed on dagshub itself or on the mlflow platform integrated there.
+This Project is connected to Dagshub so all my experiments are sent to dagshub and can be viewed on dagshub itself or on the mlflow platform integrated there. MLflow is a production grade experiments tracker for managing end-to-end machine learning lifecycle. It helps with experiments tracking, packaging code into reproducible runs and sharing and deploying models.
 
 ## View experiments locally.
 
@@ -89,7 +89,8 @@ export MLFLOW_TRACKING_PASSWORD=fb3845efcc3b2e46a4157b1d2c977a21e02dd16e
 ```
 
 ## DVC setup
-Initialise dvc 
+
+DVC (Data Version Control) is a light weight experiments tracker and it can perform orchestration (creating pipelines)
 
 ```
 dvc init
@@ -106,3 +107,63 @@ To the pipeline structure, use the command below
 ```
 dvc dag
 ```
+
+## AWS CI/CD Deployment with Github Actions
+
+- Login to the AWS console
+- Create an IAM user for deployment
+- The user should have EC2 & ECR access. The deployment steps are mentioned below,
+
+  1. Build the docker image of the source code
+  2. Push your docker image to the ECR
+  3. Launch your EC2
+  4. Pull your image from the ECR to the EC2
+  5. Launch your docker image in the EC2
+
+- Policy
+
+  1. Amazon EC2 Container Registry Access
+  2. Amazon EC2 Full Access
+
+- Create EC2 repo to save docker image
+  ```
+  save the URI: 566373416292.dkr.ecr.us-east-1.amazonaws.com/chicken
+  ```
+- Create Ubuntu EC2 VM
+- Install Docker on the EC2 Machine
+
+  ```
+      #optional
+
+      sudo apt-get update -y
+
+      sudo apt-get upgrade
+
+      #required
+
+      curl -fsSL https://get.docker.com -o get-docker.sh
+
+      sudo sh get-docker.sh
+
+      sudo usermod -aG docker ubuntu
+
+      newgrp docker
+  ```
+
+- Configure EC2 as self-hosted runner
+  ```
+  setting > actions > runner > new self hosted runner > choose os >
+  ```
+- Setup github secrets
+
+  ```
+      AWS_ACCESS_KEY_ID=
+
+      AWS_SECRET_ACCESS_KEY=
+
+      AWS_REGION = us-east-1
+
+      AWS_ECR_LOGIN_URI = demo >>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
+
+      ECR_REPOSITORY_NAME = kidney
+  ```
